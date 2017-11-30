@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <form action="/products" method="post">
+            <div class="errors">
+                <%if(errors){%>
+                    <ul>
+                        <%for(var i=0;i<errors.length;i++){%>
+                            <li><%=errors[i].param%> - <%=errors[i].msg%></li>
+                        <%}%>
+                    </ul>
+                <%}%>
+            </div>
+            <div>
+                <label for="titulo">Titulo</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Coloque o titulo" value="<%=product.titulo%>">
+            </div>
+            <div>
+                <label for="preco">Preço</label>
+                <input type="text" id="preco" name="preco" placeholder="150.25" value="<%=product.preco%>">
+            </div>
+            <div>
+                <label for="descricao">Titulo</label>
+                <textarea cols="20" rows="10" id="descricao" name="descricao" placeholder="Fale sobre o livro"><%=product.descricao%></textarea>
+            </div>
+            <input type="submit" value="gravar" />
+        </form>
+    </body>
+</html>
