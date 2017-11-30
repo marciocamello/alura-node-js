@@ -5,7 +5,6 @@ const conn = express.infra.connectionFactory();
 describe('#ProductsController', () => {
 
     beforeEach((done) => {
-        const conn = express.infra.connectionFactory();
         conn.query("delete from produtos", (err,result) => {
             if(!err) {
                 return done(err);
