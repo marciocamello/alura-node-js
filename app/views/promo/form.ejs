@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <form action="/promo" method="post">
+            <div>
+                <input type="text" name="message" placeholder="Promo message">
+            </div>
+            <div>
+                <select name="product[id]">
+                    <% for(var i=0; i < products.length; i++){ %>
+                        <option value="<%=products[i].id%>"><%=products[i].titulo%></option>
+                    <% } %>
+                </select>
+            </div>
+            <input type="submit" value="Create promo">
+        </form>
+    </body>
+</html>
